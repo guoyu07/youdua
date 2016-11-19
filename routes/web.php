@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return var_dump(\App\ArticleTag::all()->pluck('article_id')->toArray());
+//    return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

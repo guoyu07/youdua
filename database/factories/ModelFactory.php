@@ -21,3 +21,32 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Author::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->unique()->name,
+        'avatar' => $faker->imageUrl(52,52),
+    ];
+});
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->unique()->word,
+    ];
+});
+
+$factory->define(App\Article::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->unique()->sentence,
+        'content' => $faker->text,
+        'author_id' => $faker->randomElement(\App\Author::all()->pluck('id')->toArray()),
+        'category_id' => $faker->randomElement(\App\Category::all()->pluck('id')->toArray()),
+    ];
+});
+
+$factory->define(App\ArticleTag::class, function (Faker\Generator $faker) {
+   return [
+       'article_id' => $faker->randomElement(\App\Article::all()->pluck('id')->toArray()),
+       'tag_id' => $faker->randomElement(\App\Tag::all()->pluck('id')->toArray()),
+   ];
+});
