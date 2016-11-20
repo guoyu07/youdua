@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('content');
+            $table->integer('hits')->unsigned();
             $table->integer('author_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->timestamps();

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -35,5 +36,14 @@ class Article extends Model
     public function tags()
     {
         return $this->hasMany('App\Tag');
+    }
+
+    public function getCreatedAtAttribute($date)
+    {
+        if (Carbon::now() > Carbon::parse($date)->addDays(10)) {
+            return Carbon::parse($date);
+        }
+
+        return Carbon::parse($date)->diffForHumans();
     }
 }

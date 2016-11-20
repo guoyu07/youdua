@@ -1,0 +1,22 @@
+.main-layout {
+  background:#fff;
+  overflow: hidden;
+}
+
+.article-list {
+  overflow:hidden;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.article-list a {
+  color: #222;
+  display: block;
+}
+
+.article-list a:hover {
+  text-decoration: none;
+}
+
+.article {
+  color: #222;
+}

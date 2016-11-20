@@ -39,6 +39,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->unique()->sentence,
         'content' => $faker->text,
+        'hits' => rand(1,10000),
         'author_id' => $faker->randomElement(\App\Author::all()->pluck('id')->toArray()),
         'category_id' => $faker->randomElement(\App\Category::all()->pluck('id')->toArray()),
     ];
