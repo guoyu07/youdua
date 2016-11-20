@@ -10,12 +10,12 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', function () {
-    return var_dump(\App\ArticleTag::all()->pluck('article_id')->toArray());
-//    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'IndexController@index');
+Route::get('/category/{id}', 'CategoryController@articles');
+Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/author/{id}', 'AuthorController@index');
+
+Route::get('/home', 'User/HomeController@index');
+Route::get('/follow', 'User/FollowController@index');
