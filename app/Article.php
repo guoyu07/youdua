@@ -35,9 +35,14 @@ class Article extends Model
      */
     public function tags()
     {
-        return $this->hasMany('App\Tag');
+        return $this->belongsToMany('App\Tag');
     }
 
+    /**
+     * 人性化显示时间
+     * @param $date
+     * @return string|static
+     */
     public function getCreatedAtAttribute($date)
     {
         if (Carbon::now() > Carbon::parse($date)->addDays(10)) {

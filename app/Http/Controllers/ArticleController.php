@@ -21,7 +21,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = $this->article->find($id);
+        $article = $this->article->with(['tags'])->find($id);
         $relatedArticles = $this->article->getRelatedArticles($article);
         return view('article')->with(compact('article','relatedArticles'));
     }

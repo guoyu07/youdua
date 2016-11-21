@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $names = ['社会', '娱乐', '科技', '体育', '汽车', '财经', '搞笑',];
+        $names = ['社会', '娱乐', '科技', '体育', '汽车', '财经', '搞笑', '故事'];
         $categories = [];
         foreach($names as $name) {
             $categories[] = [

@@ -3,7 +3,7 @@
   overflow: hidden;
 }
 
-.article-list {
+.article-list, .article-related .title {
   overflow:hidden;
   border-bottom:1px solid #e8e8e8;
 }
@@ -19,4 +19,30 @@
 
 .article {
   color: #222;
+}
+
+.article-content {
+  max-height: 980px;
+  overflow: hidden;
+}
+
+.article-footer {
+  overflow: hidden;
+}
+
+.article-hits {
+  color:#777;
+}
+
+.author-avatar {
+  padding-top:30px;
+}
+
+.author-avatar img {
+  width:88px;
+  height:88px;
+}
+
+.author-avatar, .author-name {
+  text-align: center;
 }
