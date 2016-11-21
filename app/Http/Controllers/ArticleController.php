@@ -22,7 +22,10 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = $this->article->with(['tags'])->find($id);
-        $relatedArticles = $this->article->getRelatedArticles($article);
-        return view('article')->with(compact('article','relatedArticles'));
+
+        //相关文章
+        $articles = $this->article->getRelatedArticles($article);
+
+        return view('article')->with(compact('article','articles'));
     }
 }

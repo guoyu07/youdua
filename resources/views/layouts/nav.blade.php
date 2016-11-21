@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="/img/logo.png" width="24" height="24" />
+                <img class="img-circle" src="/img/logo.png" width="24" height="24" />
                 {{--{{ config('app.name', 'Laravel') }}--}}
             </a>
         </div>

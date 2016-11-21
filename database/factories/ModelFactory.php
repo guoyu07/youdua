@@ -36,9 +36,20 @@ $factory->define(App\Tag::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
+    $content = <<<CONTENT
+<p>{$faker->realText('500')}</p>
+<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p>{$faker->realText('500')}</p>
+<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p>{$faker->realText('500')}</p>
+<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p>{$faker->realText('500')}</p>
+<p><img src="{$faker->imageUrl(500,300)}"/></p>
+CONTENT;
+
     return [
         'title' => $faker->unique()->sentence,
-        'content' => $faker->realText('2000'),
+        'content' => $content,
         'hits' => rand(1,1000),
         'author_id' => $faker->randomElement(\App\Author::all()->pluck('id')->toArray()),
         'category_id' => $faker->randomElement(\App\Category::all()->pluck('id')->toArray()),

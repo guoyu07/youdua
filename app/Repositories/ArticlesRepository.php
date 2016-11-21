@@ -11,6 +11,18 @@ class ArticlesRepository extends Repository {
         return 'App\Article';
     }
 
+    public function getArticlesWithAuthorAndThumbnails() {
+        $articles = $this->with(['author'])->all();
+        return $this->getThumbnails($articles);
+    }
+
+    public function getArticlesWithAuthorAndThumbnailsByCategoryId($id) {
+        $articles = $this->with(['author'])
+                    ->findWhere([['category_id', '=', $id]]);
+
+        return $this->getThumbnails($articles);
+    }
+
     /**
      * @param $article
      * @param int $limit Limit
@@ -24,6 +36,21 @@ class ArticlesRepository extends Repository {
             ['category_id', '=', $article->category_id],
         ])->inRandomOrder()->take($limit)->get();
 
-        return $articles;
+        return $this->getThumbnails($articles);
+    }
+
+    public function getThumbnails($articles)
+    {
+        return $articles->map(function($item){
+            $item->thumbnails = $this->getImagesInText($item->content);
+            return $item;
+        });
+    }
+
+    public function getImagesInText($text)
+    {
+        $p = '/<img.*?src=[\'|\"](.+?)[\'|\"].*?>/i';
+        preg_match_all($p,$text,$images);
+        return array_slice($images[1], 0, 3);
     }
 }

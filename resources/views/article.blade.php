@@ -8,7 +8,7 @@
         </div>
 
         <div class="article-content">
-            {{$article->content}}
+            {!! $article->content !!}
         </div>
 
         <div class="article-footer">
@@ -22,9 +22,7 @@
 
         <div class="article-related">
             <h3 class="title">相关文章</h3>
-            @foreach($relatedArticles as $article)
-                @include('article/list')
-            @endforeach
+            @include('article/list')
         </div>
     </div>
 @endsection

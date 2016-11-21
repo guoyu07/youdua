@@ -5,7 +5,5 @@
 @endsection
 
 @section('content')
-    @foreach($articles as $article)
-        @include('article/list')
-    @endforeach
+    @include('article/list')
 @endsection

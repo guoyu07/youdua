@@ -20,7 +20,7 @@ class IndexController extends Controller
     public function index()
     {
         $categories = $this->category->all();
-        $articles = $this->article->with(['author'])->all();
+        $articles = $this->article->getArticlesWithAuthorAndThumbnails();
 
         return view('index')->with(compact('categories', 'articles'));
     }

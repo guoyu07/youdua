@@ -23,9 +23,7 @@ class CategoryController extends Controller
         $categories = $this->category->all();
 
         //获取某分类下的文章列表
-        $articles = $this->article
-                        ->with(['author'])
-                        ->findWhere([['category_id', '=', $id]]);
+        $articles = $this->article->getArticlesWithAuthorAndThumbnailsByCategoryId($id);
 
         return view('index')->with(compact('categories', 'articles'));
     }
