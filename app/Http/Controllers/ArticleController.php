@@ -21,7 +21,10 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = $this->article->with(['tags'])->find($id);
+        $article = $this->article->getArticleWithTags($id);
+
+        //阅读量+1
+        $this->article->incrementHits($article);
 
         //相关文章
         $articles = $this->article->getRelatedArticles($article);

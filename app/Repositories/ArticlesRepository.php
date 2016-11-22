@@ -63,4 +63,14 @@ class ArticlesRepository extends Repository {
 
         return $articles;
     }
+
+    public function getArticleWithTags($id)
+    {
+        return $this->with(['tags'])->find($id);
+    }
+
+    public function incrementHits($article)
+    {
+        $article->increment('hits');
+    }
 }
