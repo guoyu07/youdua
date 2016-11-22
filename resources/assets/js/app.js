@@ -19,4 +19,6 @@ const app = new Vue({
     el: '#app'
 });
 
-$("img.lazy").lazyload();
+$(document).ready(function (){
+    $("img.lazy").lazyload();
+});
