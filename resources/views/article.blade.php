@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('nav')
+    @include('layouts.nav')
+@endsection
+
 @section('content')
     <div class="article">
         <div class="article-header">
