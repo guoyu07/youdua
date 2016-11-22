@@ -11,6 +11,8 @@ class Article extends Model
         'title', 'content', 'author_id', 'category_id'
     ];
 
+    protected $appends = ['thumbnails'];
+
     /**
      * 文章的作者
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -52,8 +54,15 @@ class Article extends Model
         return Carbon::parse($date)->diffForHumans();
     }
 
-//    public function getContentAttribute($content)
-//    {
+    public function getThumbnailsAttribute()
+    {
+        return $this->getImagesInText($this->attributes['content']);
+    }
+
+    public function getContentAttribute($content)
+    {
+        return $content;
+//        $this->attributes['thumbnails'] = $this->getImagesInText($content);
 //        $patterns = [
 //            '/(<img\s*)src/i'
 //        ];
@@ -63,5 +72,12 @@ class Article extends Model
 //        ];
 //
 //        return preg_replace($patterns, $replacements, $content);
-//    }
+    }
+
+    public function getImagesInText($text)
+    {
+        $p = '/<img.*?src=[\'|\"](.+?)[\'|\"].*?>/i';
+        preg_match_all($p,$text,$images);
+        return array_slice($images[1], 0, 3);
+    }
 }

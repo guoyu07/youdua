@@ -6,4 +6,5 @@
 
 @section('content')
     @include('article/list')
+    {{$articles->links()}}
 @endsection
