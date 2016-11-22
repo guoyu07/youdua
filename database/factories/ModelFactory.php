@@ -38,13 +38,13 @@ $factory->define(App\Tag::class, function (Faker\Generator $faker) {
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
     $content = <<<CONTENT
 <p>{$faker->realText('500')}</p>
-<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p><img src="{$faker->imageUrl(500,300)}" width="500" height="300"/></p>
 <p>{$faker->realText('500')}</p>
-<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p><img src="{$faker->imageUrl(500,300)}" width="500" height="300"/></p>
 <p>{$faker->realText('500')}</p>
-<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p><img src="{$faker->imageUrl(500,300)}" width="500" height="300"/></p>
 <p>{$faker->realText('500')}</p>
-<p><img src="{$faker->imageUrl(500,300)}"/></p>
+<p><img src="{$faker->imageUrl(500,300)}" width="500" height="300"/></p>
 CONTENT;
 
     return [

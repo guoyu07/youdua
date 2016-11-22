@@ -22,8 +22,7 @@ class AuthorController extends Controller
         $author = $this->author->find($id);
 
         //获取某作者的文章列表
-        $articles = $this->article
-            ->findWhere([['author_id', '=', $author->id]]);
+        $articles = $this->article->getArticlesWithThumbnailsByAuthorId($author->id);
 
         return view('author')->with(compact('author', 'articles'));
     }

@@ -51,4 +51,17 @@ class Article extends Model
 
         return Carbon::parse($date)->diffForHumans();
     }
+
+//    public function getContentAttribute($content)
+//    {
+//        $patterns = [
+//            '/(<img\s*)src/i'
+//        ];
+//
+//        $replacements = [
+//            '$1class="lazy" data-original'
+//        ];
+//
+//        return preg_replace($patterns, $replacements, $content);
+//    }
 }

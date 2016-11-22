@@ -6,7 +6,11 @@
         @if(!empty($article->thumbnails))
             <div class="article-thumbnail">
                 @foreach($article->thumbnails as $thumbnail)
-                <img src="{{$thumbnail}}" />
+                    <div class="thumbnail-holder">
+                        <div class="thumbnail-holder-inner">
+                            <img class="lazy" data-original="{{$thumbnail}}" />
+                        </div>
+                    </div>
                 @endforeach
             </div>
         @endif

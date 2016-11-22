@@ -23,6 +23,12 @@ class ArticlesRepository extends Repository {
         return $this->getThumbnails($articles);
     }
 
+    public function getArticlesWithThumbnailsByAuthorId($id) {
+        $articles = $this->findWhere([['author_id', '=', $id]]);
+
+        return $this->getThumbnails($articles);
+    }
+
     /**
      * @param $article
      * @param int $limit Limit
