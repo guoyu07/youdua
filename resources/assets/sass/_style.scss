@@ -3,6 +3,10 @@
   overflow: hidden;
 }
 
+.index-top {
+  padding-top:36px;
+}
+
 .article-list, .article-related .title {
   overflow:hidden;
   border-bottom:1px solid #e8e8e8;
@@ -100,6 +104,10 @@
   color:#777;
 }
 
+.article-hits .glyphicon {
+  margin-left:10px;
+}
+
 .article-related .title {
   margin-bottom:0;
 }
@@ -114,4 +122,42 @@
 
 .author-avatar, .author-name {
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .index-top {
+    padding-top:0px;
+  }
+}
+
+.navbar-xs {
+  min-height:36px;
+}
+
+.navbar-xs .nav {
+  float:left;
+}
+
+.navbar-xs li {
+  display:inline-block;
+}
+
+.navbar-xs .navbar-header {
+  width: 20%;
+}
+
+.navbar-xs .navbar-left {
+  width:80%;
+  height:26px;
+  line-height:26px;
+  overflow-x: scroll;
+  margin: 5px 0;
+}
+
+.navbar-xs .navbar-brand {
+  padding:6px 15px;
+  height:36px;
+}
+.navbar-xs .navbar-left a {
+  padding: 0 2px;
 }

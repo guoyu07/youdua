@@ -21,5 +21,6 @@ const app = new Vue({
 
 $(document).ready(function (){
     $("img.lazy").lazyload();
+    $("li[category-id="+currentCategoryId+"]").addClass("active");
 });
 

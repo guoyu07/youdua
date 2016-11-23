@@ -20,9 +20,9 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="/">推荐</a></li>
+                <li category-id="0"><a href="/">推荐</a></li>
                 @foreach($categories as $category)
-                    <li><a href="/category/{{$category->id}}">{{$category->name}}</a></li>
+                    <li category-id="{{$category->id}}"><a href="/category/{{$category->id}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
 

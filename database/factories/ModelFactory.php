@@ -51,6 +51,7 @@ CONTENT;
         'title' => $faker->unique()->sentence,
         'content' => $content,
         'hits' => rand(1,1000),
+        'likes' => rand(1,100),
         'author_id' => $faker->randomElement(\App\Author::all()->pluck('id')->toArray()),
         'category_id' => $faker->randomElement(\App\Category::all()->pluck('id')->toArray()),
     ];
