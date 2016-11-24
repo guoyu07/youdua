@@ -13,7 +13,7 @@ class CategoryController extends Controller
 
     public function __construct(Article $article, Category $category)
     {
-        $this->middleware('guest');
+//        $this->middleware('guest');
         $this->article = $article;
         $this->category = $category;
     }

@@ -21,6 +21,8 @@ const app = new Vue({
 
 $(document).ready(function (){
     $("img.lazy").lazyload();
-    $("li[category-id="+currentCategoryId+"]").addClass("active");
+    if(typeof(currentCategoryId) != "undefined") {
+        $("li[category-id="+currentCategoryId+"]").addClass("active");
+    }
 });
 

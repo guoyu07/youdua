@@ -12,7 +12,7 @@ class AuthorController extends Controller
 
     public function __construct(Article $article, Author $author)
     {
-        $this->middleware('guest');
+//        $this->middleware('guest');
         $this->article = $article;
         $this->author = $author;
     }

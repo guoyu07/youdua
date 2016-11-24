@@ -17,5 +17,5 @@ Route::get('/category/{id}', 'CategoryController@articles');
 Route::get('/article/{id}', 'ArticleController@show');
 Route::get('/author/{id}', 'AuthorController@show');
 
-Route::get('/home', 'User/HomeController@index');
-Route::get('/follow', 'User/FollowController@index');
+Route::get('/home', 'User\HomeController@index');
+Route::get('/follow', 'User\FollowController@index');

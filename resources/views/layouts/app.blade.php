@@ -26,9 +26,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="main-layout col-md-8 col-md-offset-2">
-                    @yield('content')
-                </div>
+                @yield('content')
             </div>
         </div>
     </div>
